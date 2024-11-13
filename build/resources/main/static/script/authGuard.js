@@ -13,7 +13,6 @@ function getCookie(name) {
     return null;
 }
 
-
 const authToken = getCookie("authToken");
 console.log(authToken);
 const currentUrl = window.location.href;

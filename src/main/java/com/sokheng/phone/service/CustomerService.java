@@ -30,6 +30,7 @@ public class CustomerService {
     }
 
     public List<Customer> getCustomerByToken(String auth_token) {
+        System.out.println(">> auth: " + auth_token);
         return customerRepository.findByAuthToken(auth_token);
     }
 

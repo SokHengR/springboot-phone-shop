@@ -28,7 +28,12 @@ public class UserController {
     @PostMapping("/user")
     @ResponseBody
     public List<Customer> userPost(@RequestParam String auth_token) {
-        System.out.println(">> " + auth_token);
+        // Remove surrounding quotes if present
+        if (auth_token.startsWith("\"") && auth_token.endsWith("\"")) {
+            auth_token = auth_token.substring(1, auth_token.length() - 1);
+        }
+    
+        System.out.println(">> " + auth_token); // Should print without quotes
         return customerService.getCustomerByToken(auth_token);
-    }
+    }    
 }

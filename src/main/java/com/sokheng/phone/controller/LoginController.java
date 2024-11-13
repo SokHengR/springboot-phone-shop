@@ -33,7 +33,7 @@ public class LoginController {
 
         if (authedCustomer.isPresent()) {
             Customer customer = authedCustomer.get();
-            customer.setAuth();
+            // customer.setAuth();
 
             return new ResponseMessage("success", customer.getAuth());
         } else {
