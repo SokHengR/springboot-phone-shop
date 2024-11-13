@@ -29,6 +29,10 @@ public class CustomerService {
         return customerRepository.findById(id);
     }
 
+    public List<Customer> getCustomerByToken(String auth_token) {
+        return customerRepository.findByAuthToken(auth_token);
+    }
+
     public List<Customer> getCustomerByPhoneNumber(String phone_number) {
         return customerRepository.findByPhoneNumber(phone_number);
     }
